@@ -1,0 +1,78 @@
+package FileOperation;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+
+public class Program {
+	public static void main(String[] args) throws IOException {
+
+		ArrayList<String> DStore = new ArrayList<String>();
+		try {
+			String file = "D:\\BRD-File Upload\\BRD-File Upload\\trail.txt";
+			if (file.endsWith(".txt")) {
+				System.out.println("valid extension");
+				BufferedReader reader = new BufferedReader(new FileReader(
+						"D:\\BRD-File Upload\\BRD-File Upload\\trail.txt"));
+
+				while (true) {
+					String line = reader.readLine();
+					DStore.add(line);
+					
+					
+									
+					
+
+					if (line == null) {
+						
+						break;
+					}
+
+					String[] parts = line.split("~");
+
+					for (String part : parts) {
+//						int i = part.length();
+//						System.out.println(i);
+						System.out.println(part);
+					}
+					System.out.println();
+				}
+
+				reader.close();
+
+			} else {
+				System.out.println("invalid extension");
+			}
+		} catch (FileNotFoundException e) {
+			System.out.println("file not found enter valid path");
+		}
+//		catch(Exception e)
+//		{
+//			System.out.println("Something went wrong");
+//		}
+
+	}
+
+	public void validateLength() {
+
+	}
+
+	public void validatype() {
+
+	}
+
+	public void validateMandatoryOrNot() {
+
+	}
+
+	public void validateDomainValueCheck() {
+
+	}
+
+	public void validateSpecialCharacterValidation() {
+
+	}
+
+}
